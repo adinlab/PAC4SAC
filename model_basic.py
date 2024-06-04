@@ -1,9 +1,7 @@
-import torch
+import torch,math
 from torch import nn
 from torch.nn.modules.loss import _Loss
-import math
 from architectures import calculate_kl_terms
-#from agent import Agent
 
 class Actor(nn.Module):
     def __init__(self, arch,  n_state, n_action):

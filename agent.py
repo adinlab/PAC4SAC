@@ -11,7 +11,6 @@ args, unknown = parser.parse_known_args()
 class Agent(nn.Module):
     def __init__(self, env):
         super(Agent, self).__init__()
-        #self.args = args
         self.device = 'cpu'
         self.env = env
         args.buffer_size=1000000

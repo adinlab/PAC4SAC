@@ -1,7 +1,6 @@
 
-import time,argparse
+import time, argparse, torch
 import numpy as np
-import torch
 from make_environment import Experiment
 parser = argparse.ArgumentParser()
 args = parser.parse_args()

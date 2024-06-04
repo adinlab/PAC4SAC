@@ -1,10 +1,9 @@
 
 import gymnasium as gym
-import random
+import random, torch
 from gymnasium.wrappers import RescaleAction
 from typing import Optional
 import numpy as np
-import torch
 from dmcontrol_environment import *
 from get_model import *
 
@@ -88,7 +87,6 @@ def make_env(env_name: str,
 
 class Experiment(object):
     def __init__(self):
-        #self.args = args
         self.n_total_steps = 0
         self.max_steps = 100000
         self.env = make_env('cartpole-swingup', 1)

@@ -1,5 +1,5 @@
 
-import torch,math
+import torch, math
 import torch.nn as nn
 import torch.nn.init as init
 import torch.nn.functional as F
@@ -84,12 +84,7 @@ class VariationalBayesianLinear(nn.Module):
         self.weight_mu_prior.data.requires_grad = False
         self.weight_log_sig2_prior.data = newprior.weight_log_sig2.data.clone()
         self.weight_log_sig2_prior.data.requires_grad = False
-        #if self.has_bias:
-        #    self.bias_mu_prior.data = newprior.bias_mu.data.clone()
-        #    self.bias_mu_prior.data.requires_grad = False
-        #    self.bias_log_sig2_prior.data = newprior.bias_log_sig2.data.clone()
-        #    self.bias_log_sig2_prior.data.requires_grad = False
-
+     
     def kl_loss(self):
         kl_weight = 0.5 * (
             self.weight_log_sig2_prior
@@ -103,16 +98,6 @@ class VariationalBayesianLinear(nn.Module):
         )
         kl = kl_weight.sum()
         n = len(self.weight_mu.view(-1))
-        #if self.has_bias:
-        #    kl_bias = 0.5 * (
-        #        self.bias_log_sig2_prior
-        #        - self.bias_log_sig2
-        #        + (self.bias_log_sig2.exp() + (self.bias_mu_prior - self.bias_mu) ** 2)
-        #        / (self.bias_log_sig2_prior.exp())
-        #        - 1.0
-        #    )
-        #    kl += kl_bias.sum()
-        #    n += len(self.bias_mu.view(-1))
         return kl, n
 
 
