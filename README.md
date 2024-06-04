@@ -1,4 +1,4 @@
-# PAC4SAC
+# PacBayesianSoftActorCritic
 
 This repository includes the code to replicate the USAC algorithm from paper:
 
