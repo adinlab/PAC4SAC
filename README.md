@@ -1,6 +1,6 @@
 # PacBayesianSoftActorCritic
 
-This repository includes the code to replicate the USAC algorithm from paper:
+This repository includes the code to replicate the pac4sac algorithm from paper:
 
 
 > **PAC-Bayesian Soft Actor-Critic Learning**\
